@@ -1,3 +1,3 @@
 ---
-Welcome to my example Github site!
+title: Machine Learning with Astrophysical Transient Detections
 ---
