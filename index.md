@@ -1,3 +1,3 @@
 ---
-title: Machine Learning with Astrophysical Transient Detections
+Machine Learning with Astrophysical Transient Detections
 ---
