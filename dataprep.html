@@ -17,6 +17,19 @@
         <h1>Data Preparation, Cleaning, and Visualization</h1>
 
         <p>
+            The data that will be used for this project includes the Zwicky Transient Facility (ZTF) DR24 transient detections. DR24 was released by 
+            NASA's Infrared Science Archive (IRSA) and includes observations from 03/2018 - 11/2025. This total data release contains 69.7 million
+            single-exposure images, 188,000 co-added images, 1,043 billion source detections, and 5.32 billion lightcurves 
+            (https://www.ztf.caltech.edu/ztf-public-releases.html). This is split among the public and private samples. This project will use only a 
+            small fraction of the public data. For samples of data larger than about 1,000 detections, this data can be acquired in the form of 
+            Parquet/HATS collection, which ultimately allows for cloud access of the data rather than commiting the large datasets to memory. There 
+            are two primary Parquet/HATS collections: <strong>Objects Table</strong> and <strong>Lightcurves</strong>. For this project, 
+            <strong>Objects Table</strong> will provide sky positions of the transients and <strong>Lightcurves</strong> will provide lightcurve 
+            features. These features will be transformed into useful quantities to measure the peak amplitudes, durations, and variability of each 
+            transient detection. 
+        </p>
+
+        <p>
             
         </p>
   
