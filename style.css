@@ -66,12 +66,9 @@ p {
 }
 
 .question-list {
-    width: fit-content;
+    list-style-position: inside;
+    padding-left: 0;
     margin: 30px auto;
     text-align: center;
     line-height: 1.7;
-}
-
-.question-list li {
-    text-align: center;
 }
