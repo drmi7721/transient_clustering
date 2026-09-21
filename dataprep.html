@@ -50,11 +50,68 @@
             quantities including the <em>flux_amplitude</em>, <em>flux_ratio</em>, <em>rise_time</em>, <em>decay_time</em>, <em>rise_flux</em>, and 
             <em>decay_flux</em>. In modern observations, these lightcurve quantities show lots of variability in different wavelength bands. 
         </p>
+        
         <figure class="eda-figure">
             <img src="images/og_sky_pos.png" 
                  alt="Original sky position data">
             <figcaption>
                 Figure 1: Original sky position data (before cleaning) plotted in declination vs. right ascension on an all-sky map and zoomed in.
+                Right ascension and declination measure angles on the sky and are analagous to latitude and longitude. Both are measured in units of degrees.
+                From this plot, it is clear that the sample of data chosen lies close to the celestial equator. 
+            </figcaption>
+        </figure>
+
+        <figure class="eda-figure">
+            <img src="images/sky_pos.png" 
+                 alt="Sky position data">
+            <figcaption>
+                Figure 2: Sky position data (after cleaning) plotted in declination vs. right ascension on an all-sky map and zoomed in.
+                Right ascension and declination measure angles on the sky and are analagous to latitude and longitude. Both are measured in units of degrees.
+                From this plot, it is clear that the sample of data chosen lies close to the celestial equator. In this case, the cleaned data has
+                created some extra gaps in the data. The changes are minimal when looking at these plots, since the sky coverage is very dense. However,
+                the original sample contains 3,541,887 data points while the cleaned sample contains 2,212,201 data points (about 62% of the original
+                sample).
+            </figcaption>
+        </figure>
+
+        <figure class="eda-figure">
+            <img src="images/n_obs_hist.png" 
+                 alt="Number of observations">
+            <figcaption>
+                Figure 3: Histograms that show the number of observations in the cleaned sample of data. The left panel shows the number of observations
+                per transient source. The cleaned data contains only sources with at least two observations, but some sources can have up to about 500
+                observations. The mean and median of the distribution are shown in red and orange respectively. The right panel shows the number of
+                transient sources with detections in the different photometric bands (g, r, and i). These photometric bands cover the optical wavelength
+                range, and correspond more specifically to blue - green, red, and near infrared - deep red. It is clear that the r-band has the most
+                source observations. 
+            </figcaption>
+        </figure>
+
+        <figure class="eda-figure">
+            <img src="images/ex_lightcurve.png" 
+                 alt="Example lightcurve">
+            <figcaption>
+                Figure 4: An example ZTF lightcurve. This lightcurve example was pulled from the cleaned dataset. In order to plot a transient
+                lightcurve, the original magnitude and HMJD data is needed. These data were extracted from the raw data using the objects unique
+                identifier, which is also stored in the cleaned dataset. Heliocentric Modified Julian Days are measured in days relative to a 
+                reference date. Magnitudes are a unitless measure of brightness for astronomical sources, and follow an inverse relationship
+                (larger magnitude is dimmer). The magnitude uncertainty is included as error bars in this figure. This is an observation that was
+                flagged as a transient by ZTF, however, determining that it is truly a transient by eye is a more difficult task. This is where 
+                machine learning may help!
+            </figcaption>
+        </figure>
+
+        <figure class="eda-figure">
+            <img src="images/transient_boxplots.png" 
+                 alt="Example lightcurve">
+            <figcaption>
+                Figure 5: Three boxplots that summarize the statistical data for the transient rise times, decay times, and fractional flux increases.
+                The transient rise time is defined as the time elapsed from the beginning of the observation to the peak flux (or magnitude).
+                Similarly, the transient decay time is defined as the time elapse from the peak flux to the end of the observation. These can
+                also be calculated relative to a flux value such as 50% of the peak flux. Finally, the fractional flux increase is defined as the
+                difference between the maximum and minimum flux divided by the median flux. This gives a measure of how much the flux has increased
+                during the transient. The boxplots show the median, inner-quartile range, and range of these statistical values for the cleaned dataset.
+                Outliers were removed from these figures for visual purposes. 
             </figcaption>
         </figure>
 </body>
