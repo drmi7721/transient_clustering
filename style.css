@@ -72,3 +72,23 @@ p {
     text-align: center;
     line-height: 1.7;
 }
+
+.eda-figure {
+    text-align: center;
+    margin: 40px auto;
+}
+
+.eda-figure img {
+    display: block;
+    width: 80%;
+    max-width: 850px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.eda-figure figcaption {
+    margin-top: 12px;
+    font-size: 0.95rem;
+    font-style: italic;
+    text-align: center;
+}
