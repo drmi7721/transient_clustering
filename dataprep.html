@@ -56,8 +56,7 @@
         <p>
            Once the HATS catalog data was read into a local jupyter notebook, several filters needed to be applied for data cleaning purposes. First,
             the catalog contains 12,485 partitions, which split the data into sky position bins. Each partition contains a very large number of 
-            transient detections. Therefore, only 10 partitions are computed at a time, which gives a random sample of detections
-            on the sky. In particular, the first 10 partitions provides on the order of 100,000 observations. This is the sample of data that will be
+            transient detections. Therefore, only 10 partitions are computed at a time. In particular, the first 10 partitions provides on the order of 100,000 observations. This is the sample of data that will be
             used for Assignment 1. Throughout the project, it will be possible to sample other partitions depending on sky position interests. Once 
             these partitions are chosen, the data for each transient source is sorted chronologically by observation time, and then filtered such that
             only sources with multiple observations with no flagged detections (catflags=0) are chosen. With the final set of observations at hand, a python function iterates through the detections and
