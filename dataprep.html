@@ -59,7 +59,7 @@
             transient detections. Therefore, only 10 partitions are computed at a time. In particular, the first 10 partitions provides on the order of 100,000 observations. This is the sample of data that will be
             used for Assignment 1. Throughout the project, it will be possible to sample other partitions depending on sky position interests. Once 
             these partitions are chosen, the data for each transient source is sorted chronologically by observation time, and then filtered such that
-            only sources with multiple observations with no flagged detections (catflags=0) are chosen. With the final set of observations at hand, a python function iterates through the detections and
+            only sources with multiple observations and no flagged detections (catflags=0) are chosen. With the final set of observations at hand, a python function iterates through the detections and
             computes relevant amplitudes and temporal signatures that will be used as features in the final machine learning dataset. The raw data
             provides objects idenitifiers, sky positions, photometric bands, times of observation, and apparent magnitudes (brightness). In particular,
             the times of observation come in units of Heliocentric Modified Julian Days, which are converted into seconds. From this set of raw data, 
