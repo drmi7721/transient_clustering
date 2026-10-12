@@ -33,6 +33,20 @@
 
         <h2>Overview</h2>
 
+        <p>
+            The core of principal component analysis (PCA) is reducing the dimensions of a dataset such that it maintains most of the structure. 
+            Dimensionality reduction can be useful when dealing with real datasets that can contain hundreds of features and observations, or even more!
+            In particular, it is often the case that features are correlated with each other, which ultimately provides redundant information. 
+            Additionally, it is impossible to plot hundreds of features at the same time, so plotting the most important ones becomes much simpler when
+            the dimensionality of the dataset is reduced. PCA decomposes the data into a new basis of "principal components", which describe the
+            variance of the data. In particular, principal component #1 describes the largest component of variance in the data, and the other 
+            consecutive principal components describe successively smaller components of the variance. The variance of the data is captured by the 
+            eigenvalues of the covariance matrix, implying that the eigenvectors represent the principal components. Therefore, using the covariance 
+            matrix, PCA becomes a simple eigenvalue problem! 
+        </p>
+
+        
+
         <h2>Data Prep</h2>
 
         <h2>Code</h2>
