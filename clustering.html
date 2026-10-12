@@ -100,9 +100,60 @@
         <h2>Code</h2>
 
         <p>
-            For k-means clustering, the optimal number of 
+            For k-means clustering, the optimal number of clusters was chosen using the silhouette method. This method defines a silhouette score, which
+            compares the distance between a data point and its own cluster, and the distance between a data point and the nearest other cluster. A
+            positive silhouette score indicates that the data point is well-placed in its own cluster, while a negative silhouette score indicates that
+            it should be moved to another cluster. The number of clusters chosen ranged from k=2 to k=10, as shown in Figure 4 below. The code for this
+            process can be found under the "Clustering" section of the jupyter notebook link below.
+        </p>
+
+        <p>
+            For hierarchical clustering, the chosen distance measure was cosine similarity. Rather than measuring the Euclidean distance between data 
+            points, this measures the angle between vectors in the dataset. The code for this process can also be found under the "Clustering" section
+            of the jupyter notebook link below.
         </p>
 
         <h2>Results</h2>
+
+        <figure class="eda-figure">
+            <img src="images/silhouette.png" 
+                 alt="K-means Silhouette">
+            <figcaption>
+                Figure 4: The silhouette scores for k=2 to k=10 clusters. The maximum silhouette score occurs for k=3 clusters for the transient rise
+                and decay time data, which is the chosen number of clusters in the analyses that follow.
+            </figcaption>
+        </figure>
+
+        <figure class="eda-figure">
+            <img src="images/kmeans_clusters.png" 
+                 alt="K-means Clusters">
+            <figcaption>
+                Figure 5: A plot of the transient decay times vs. the transient rise times, clustered into three categories using the k-means
+                clustering technique. Both axes are presented in a logarithmic scale to better show the spread of the data. Using the optimal k=3 
+                clusters as determined from the silhouette method, the decision boundaries fall close to about 400 days for both the transient rise
+                and decay times. 
+            </figcaption>
+        </figure>
+
+        <figure class="eda-figure">
+            <img src="images/dendrogram.png" 
+                 alt="Dendrogram">
+            <figcaption>
+                Figure 6: A dendrogram that displays the tree produced from hierarchical clustering. The vertical axis shows the distance measure,
+                in this case being cosine similarity. This method also produces k=3 clusters naturally, which are represented with the orange, green,
+                and red portions of the tree.
+            </figcaption>
+        </figure>
+
+        <figure class="eda-figure">
+            <img src="images/hierarchical_clusters.png" 
+                 alt="Hierarchical Clusters">
+            <figcaption>
+                Figure 7: A plot of the transient decay times vs. the transient rise times, clustered into three categories using the hierarchical
+                clustering technique. Both axes are presented in a logarithmic scale to better show the spread of the data. In this case, the 
+                clusters are similarly defined to the clusters from k-means, but the decision boundaries are shifted closer to about 100 days for 
+                both the transient rise and decay times. 
+            </figcaption>
+        </figure>
 
         <h2>Conclusions</h2>
