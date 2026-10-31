@@ -57,7 +57,7 @@
             detections can be predicted based on transient rise/decay times. To obtain more sky coverage than before, 10 randomly-selected partitions
             will be used to train the NB classifier, rather than the first 10 partitions of data which occupy a narrow region on the sky. A snapshot
             of the data is shown below in Figure 1, which includes the transient rise/decay times and the photometric bands (used as labels). This data
-            is a result of the data cleaning that was described in the DataPrep_EDA tab. The full 10 partition dataset contains many rows. Finally,
+            is a result of the data cleaning that was described in the DataPrep_EDA tab. The full 10 partition dataset contains 3,582,067 rows. Finally,
             in order to construct a NB classifier, the data need to be split into testing and training datasets. This was accomplished by allocating
             20% of the dataset to testing data, and the other 80% to training data. The split was chosen randomly, but can be reproduced using a 
             random_state identifier. Finally, the split attempts to keep roughly the same proportions of each label in both datasets.
