@@ -56,11 +56,12 @@
             occupying the near-infrared range. The goal of training a NB classifier here is to see whether or not the photometric bands of transient
             detections can be predicted based on transient rise/decay times. To obtain more sky coverage than before, 10 randomly-selected partitions
             will be used to train the NB classifier, rather than the first 10 partitions of data which occupy a narrow region on the sky. A snapshot
-            of the data is shown below in Figure 1, which includes the transient rise/decay times and the photometric bands (used as labels). This data
-            is a result of the data cleaning that was described in the DataPrep_EDA tab. The full 10 partition dataset contains 2,634,436 rows. Finally,
-            in order to construct a NB classifier, the data need to be split into testing and training datasets. This was accomplished by allocating
-            20% of the dataset to testing data, and the other 80% to training data. The split was chosen randomly, but can be reproduced using a 
-            random_state identifier. Finally, the split attempts to keep roughly the same proportions of each label in both datasets.
+            of the data is shown below in Figure 1, which includes the transient rise/decay times and the photometric bands (used as labels). Figure 2
+            shows the labels associated with this dataset, and Figures 3 and 4 show the datasets split into tranining and testing data, respectively.
+            This data is a result of the data cleaning that was described in the DataPrep_EDA tab. The full 10 partition dataset contains 2,634,436 rows. 
+            Finally, in order to construct a NB classifier, the data need to be split into testing and training datasets. This was accomplished by 
+            allocating 20% of the dataset to testing data, and the other 80% to training data. The split was chosen randomly, but can be reproduced 
+            using a random_state identifier. Finally, the split attempts to keep roughly the same proportions of each label in both datasets.
         </p>
 
         <figure class="eda-figure">
@@ -81,6 +82,22 @@
             </figcaption>
         </figure>
 
+        <figure class="eda-figure">
+            <img src="images/train_transient_data.png" 
+                 alt="Labels">
+            <figcaption>
+                Figure 3: An image of the trained transient dataset, which covers 80% of the original 10 randomly-partitioned dataset. 
+            </figcaption>
+        </figure>
+
+        <figure class="eda-figure">
+            <img src="images/test_transient_data.png" 
+                 alt="Labels">
+            <figcaption>
+                Figure 4: An image of the test transient dataset, which covers 20% of the original 10 randomly-partitioned dataset.
+            </figcaption>
+        </figure>
+
         <ul class="question-list">
             <li>Lightcurves ("s3://ipac-irsa-ztf/ztf/enhanced/dr24/lc/hats")</li>
         </ul>
@@ -88,7 +105,7 @@
         <h2>Code</h2>
 
         <p>
-            For naive Bayes...
+            
         </p>
 
         <a href="https://github.com/drmi7721/transient_clustering/blob/main/notebooks/final_project_code.ipynb" target="_blank">
