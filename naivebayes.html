@@ -48,7 +48,16 @@
         <h2>Data Prep</h2>
 
         <p>
-            This section will use the following data...
+            Since NB will predict labels of observations within the dataset, only labeled numeric data is required. In the context of astrophysical 
+            transient detections, one useful label that is presented in the data is the photometric band of each observation. These bands (g, r, i)
+            describe the wavelength ranges that each transient detection was observed in. In particular, these correspond to 400-550nm, 550-700nm, and
+            700-850nm, respectively. These are measured using transmission curves, which ultimately come from optical inference filters built into the
+            instrument. All of these wavelength ranges are found in the optical/visible range of the electromagnetic spectrum, with a small fraction 
+            occupying the near-infrared range. The goal of training a NB classifier here is to see whether or not the photometric bands of transient
+            detections can be predicted based on transient rise/decay times. To obtain more sky coverage than before, 10 randomly-selected partitions
+            will be used to train the NB classifier, rather than the first 10 partitions of data which occupy a narrow region on the sky. A snapshot
+            of the data is shown below in Figure 1, which includes the transient rise/decay times and the photometric bands (used as labels). This data
+            is a result of the data cleaning that was described in the DataPrep_EDA tab. The full 10 partition dataset contains many rows.
         </p>
 
         <figure class="eda-figure">
