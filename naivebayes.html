@@ -34,7 +34,15 @@
         <h2>Overview</h2>
 
         <p>
-            Naive Bayes assumes conditional independence...
+            Naive Bayes (NB) is a supervised machine learning method that incorporates Bayes' theorem to predict the classes occupied by observations in 
+            a dataset. Note that this requires labeled data, corresponding to the classes in this case. NB trains data by analyzing the features within 
+            each class to predict what those features look like, and then estimates a probability distribution. Bayes theorem uses the prior and likelihood,
+            which describe the fraction of training rows that have a specific label (y=c) and the behavior of the features that have class y=c, respectively.
+            The "naive" part comes in by assuming conditional independence, meaning that observations within a class are independent of each other. This
+            ultimately allows for the likelihood to be split into the product of individual observation probabilities. There are several different 
+            types of NB classifiers, including Gaussian NB, Multinomial NB, and Bernoulli NB. Gaussian NB is used for continuous features while 
+            Multinomial NB is used for events/counts (or discrete features). Finally, Bernoulli NB is used for binary features specifically. In the 
+            case of this project, Multinomial NB will provide the best classifier for transient rise/decay times. 
         </p>
 
         <h2>Data Prep</h2>
