@@ -34,7 +34,15 @@
         <h2>Overview</h2>
 
         <p>
-            Decision trees use boundaries to...
+            Decision trees use a series of questions that repeatedly split the data with the ultimate goal of predicting observations using these 
+            questions. Each question represents an internal node, and each answer (prediction) represents a leaf. The primary consideration with
+            constructing decision trees is deciding which questions to ask at each node. Some questions create more effective splits that others, 
+            which decreases the GINI impurity and entropy, and increases the information gain. Each of these is a different way of measuring how
+            effective a node splits the data in a decision tree. The GINI impurity measures how impure the data in a leaf is by calculating the 
+            squared probabilities of each observation falling into a specific class, while the entropy calculates the log base-2 of these same
+            probabilities. They meausre the same thing, but occupy different scales. Figure 1 shows how these two measures are plotted relative to
+            each other. The information gain comapares the entropy of the parent node with the entropy of each child. A positive information gain 
+            implies that the previous node split the data effectively, and made the data in each child more pure than before. 
         </p>
 
         <figure class="eda-figure">
