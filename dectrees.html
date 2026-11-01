@@ -42,22 +42,42 @@
             squared probabilities of each observation falling into a specific class, while the entropy calculates the log base-2 of these same
             probabilities. They meausre the same thing, but occupy different scales. Figure 1 shows how these two measures are plotted relative to
             each other. The information gain comapares the entropy of the parent node with the entropy of each child. A positive information gain 
-            implies that the previous node split the data effectively, and made the data in each child more pure than before. 
+            implies that the previous node split the data effectively, and made the data in each child more pure than before. In general, it is 
+            possible to create infinitely many different kinds of trees since each tree can have a different number of nodes and leaves. However,
+            it is crucial to choose the tree depth carefully to avoid overfitting the data.
         </p>
 
         <figure class="eda-figure">
-            <img src="images/partitioned_clustering.png" 
-                 alt="Partitioned Clustering">
+            <img src="images/gini_entropy.png" 
+                 alt="Gini Impurity vs. Entropy">
             <figcaption>
-                Figure 1: A visual of a decision tree with several nodes and branches...
+                Figure 1: The GINI impurity and entropy plotted as a function of the number of observations in one node. The entropy peaks at a value
+                of 1, while the GINI impurity peaks at a value of 0.5, both of which correspond to a node that does not split the data further.
+            </figcaption>
+        </figure>
+
+        <p>
+            For example, consider a dataset that originally contains 5 apples and 5 oranges, but one of the apples is labeled as not a red fruit and
+            and one of the oranges is labeled as a red fruit. Let a single node as whether or not each fruit is the color red. The answer to the yes/no
+            question will split the data into two different leaves, and the gini impurity, entropy, and information gain can be calculated for each 
+            leaf. Figures 2 and 3 show this small decision tree and the resulting impurity measurements. This node results in a positive information gain,
+            meaning it split the data into more pure samples. 
+        </p>
+
+        <figure class="eda-figure">
+            <img src="images/dectree.png" 
+                 alt="Simple Decision Tree">
+            <figcaption>
+                Figure 2: A simple decision tree that contains 5 apples and 5 oranges. One of the apples is labeled as not a red fruit, and one of the 
+                oranges is labeled as a red fruit. The only node in this tree asks whether or not each fruit is the color red.
             </figcaption>
         </figure>
 
         <figure class="eda-figure">
-            <img src="images/hierarchical_clustering.png" 
-                 alt="Hierarchical Clustering">
+            <img src="images/impurity_measurements.png" 
+                 alt="Impurity Measurements">
             <figcaption>
-                Figure 2: A visual for how decision trees choose a split...
+                Figure 3: 
             </figcaption>
         </figure>
 
