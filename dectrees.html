@@ -153,15 +153,60 @@
         <h2>Results</h2>
 
         <figure class="eda-figure">
-            <img src="images/silhouette.png" 
-                 alt="K-means Silhouette">
+            <img src="images/gini_tree.png" 
+                 alt="Gini Decision Tree">
             <figcaption>
-                Figure 4: 
+                Figure 8: A visual of the decision tree constructed using the gini impurity criterion and a depth of 3. 
             </figcaption>
         </figure>
+
+        <figure class="eda-figure">
+            <img src="images/entropy_tree.png" 
+                 alt="Entropy Decision Tree">
+            <figcaption>
+                Figure 9: A visual of the decision tree constructed using the entropy criterion and a depth of 3. 
+            </figcaption>
+        </figure>
+
+        Figures 8 and 9 show a visual of two decision tree classifiers, each with a maximum depth of 3 used primarily for visualization. The first 
+        one uses the GINI impurity criterion, while the second uses the entropy criterion. In both cases, only r-band observations are predicted, 
+        meaning that both classifiers strongly overpredict r-band observations and underpredict g-band and i-band observations. The accuracy for each
+        of these decision tree classifiers was equivalently 0.502, meaning that the classifier could correctly predict and incorrectly predict photometric
+        bands with equal probability. 
+
+        <figure class="eda-figure">
+            <img src="images/dectree_confusion_matrix.png" 
+                 alt="Decision Tree Confusion Matrix">
+            <figcaption>
+                Figure 10: A visual of the confusion matrix computed from the decision tree classifier using the entropy criterion. This decision tree
+                significantly overpredicts the number of r-band observations and underpredicts the number of g-band and i-band observations.
+            </figcaption>
+        </figure>
+
+        Figure 10 shows the confusion matrix constructed from the entropy decision tree classifier. This also shows that the classifier did not predict
+        any g-band or i-band observations. Since this dataset is the same as the one used for the NB classifier, this means that the decision tree
+        incorrectly predicted at least 100,000 observations (see Figure 6 in the NaiveBayes tab). 
+
+        <figure class="eda-figure">
+            <img src="images/accuracy_depth.png" 
+                 alt="Accuracy vs. Tree Depth">
+            <figcaption>
+                Figure 11: A plot of the accuracy score for each decision tree as a function of tree depth. The peak occurs for a tree depth of 15,
+                and anything larger than this begins to overfit the data.
+            </figcaption>
+        </figure>
+
+        Figure 11 shows how the accuracy of the entropy decision tree classifier changes as a function of the maximum tree depth. The peak accuracy 
+        score of 0.54 occurs for a maximum tree depth of 15, but this tree is not visualized here due to its extreme complexity. The decay in accuracy
+        for maximum tree depths larger than 15 occurs because the trees begin to overfit the data.
 
         <h2>Conclusions</h2>
 
         <p>
-            Using the figures from the results section above...
+            Using Figures 8-11 above, it is clear that the decision tree classifier could not accurately predict the photometric band of transient events 
+            based only on transient rise and decay times. An accuracy of about 0.502 means that the classifier was almost equally split between correct and 
+            incorrect predictions. The optimal tree depth for this dataset is 15, which more accurately predicts the photometric bands compared to even
+            the NB classifier in the NaiveBayes tab. A tree depth of 3, however, appears to significanly underfit the data. This ultimately leads to
+            an inaccurate classifier. In conclusion, this supervised machine learning method cannot tell us whether or not transient photometric bands
+            can be predicted based on their rise and decay times. 
         </p>
