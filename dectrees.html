@@ -101,14 +101,37 @@
             both datasets.
         </p>
 
-        <figure class="eda-figure">
-            <img src="images/clustering_data.png" 
-                 alt="Clustering Data">
+         <figure class="eda-figure">
+            <img src="images/labeled_transient_data.png" 
+                 alt="Labeled Transient Data">
             <figcaption>
-                Figure 3: An image of the cleaned transient data that will be used for k-means clustering and hierarchical clustering below. The
-                features included in this sample of data were derived from the raw transient data. Additionally, this shows only a small sample of the
-                complete dataset. In particular, this includes 2 features out of 30 total features and all 2,212,202 sources from the first 10 partitions of
-                the <strong>Lightcurve</strong> Parquet/HATS collection, linked below Figure 3.
+                Figure 4: An image of the cleaned transient data that will be used for constructing a Naive Bayes classifier. This includes 2,634,436 
+                observations of transient rise and decay times from 10 randomly-sampled partitions of the full ZTF dataset.
+            </figcaption>
+        </figure>
+
+        <figure class="eda-figure">
+            <img src="images/ml_labels.png" 
+                 alt="Labels">
+            <figcaption>
+                Figure 5: An image of the labels associated with the cleaned transient data in Figure 1. These labels correspond to the g, r, and i 
+                photometric bands.
+            </figcaption>
+        </figure>
+
+        <figure class="eda-figure">
+            <img src="images/train_transient_data.png" 
+                 alt="Labels">
+            <figcaption>
+                Figure 6: An image of the trained transient dataset, which covers 80% of the original 10 randomly-partitioned dataset. 
+            </figcaption>
+        </figure>
+
+        <figure class="eda-figure">
+            <img src="images/test_transient_data.png" 
+                 alt="Labels">
+            <figcaption>
+                Figure 7: An image of the test transient dataset, which covers 20% of the original 10 randomly-partitioned dataset.
             </figcaption>
         </figure>
 
