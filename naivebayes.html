@@ -116,15 +116,40 @@
         <h2>Results</h2>
 
         <figure class="eda-figure">
-            <img src="images/silhouette.png" 
-                 alt="K-means Silhouette">
+            <img src="images/predicted_bands.png" 
+                 alt="Actual vs. Predicted Photometric Bands">
             <figcaption>
-                Figure 5: The naives Bayes predictor...
+                Figure 5: A bar plot showing the number of observations per photometric band (blue) and the predicted observations per photometric band
+                (orange). 
             </figcaption>
         </figure>
+
+        <figure class="eda-figure">
+            <img src="images/NB_confusion_matrix.png" 
+                 alt="NB Confusion Matrix">
+            <figcaption>
+                Figure 6: A confusion matrix showing how the predicted photometric bands compare to the original observations.  
+            </figcaption>
+        </figure>
+
+        <p>
+            Figure 5 shows a bar plot comparing the number of original observations per photometric band (blue) and the number of predicted observations
+            per photometric band (orange). From this, is is clear that the NB classifier was able to correctly capture the relative numbers of observations
+            per photometric band (e.g. r-band observations > g-band observations > i-band observations). On the other hand, the classifier overpredicts the
+            number of r-band observations, and underpredicts the number of g-band and i-band observations. The accuracy of the NB classifier was 0.51, 
+            meaning that it was equally likely for the classifier to correctly predict the photometric band and incorrectly predict the photometric band
+            based only on the transient rise and decay times. Figure 6 shows the corresponding confusion matrix for the NB classifier. This matrix shows
+            the number of observation for each pair (actual, predicted) observation. The diagonals correspond to the cases where the actual and predicted
+            observations were equivalent, while the off-diagonals correspond to cases where the prediction differed from the actual observation. Since the
+            diagonals and off-diagonals in each column of the matrix each have the same order of magnitude, this confirms that the predicted photometric bands
+            can be correct or incorrect with roughly equal probability. 
+        </p>
 
         <h2>Conclusions</h2>
 
         <p>
-            Using the figures from the results section above...
+            Using Figures 5 and 6 above, it is clear that the NB classifier could not accurately predict the photometric band of transient events based
+            only on transient rise and decay times. An accuracy of 0.51 means that the classifier was almost equally split between correct and incorrect
+            predictions. The classifier did correctly predict that most of the observations are found in the r-band, then the g-band, and the finally 
+            the i-band. 
         </p>
