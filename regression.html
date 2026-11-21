@@ -1,1 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Decision Trees</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="index.html">Introduction</a>
+        <a href="dataprep.html">DataPrep_EDA</a>
+        <a href="clustering.html">Clustering</a>
+        <a href="pca.html">PCA</a>
+        <a href="naivebayes.html">NaiveBayes</a>
+        <a href="dectrees.html">DecTrees</a>
+        <a href="regression.html">Regression</a>
+        <a href="AdaBoosting.html">AdaBoosting</a>
+        <a href="GradientBoosting.html">GradientBoosting</a>
+        <a href="XGBoost.html">XGBoost</a>
+        <a href="conclusions.html">Conclusions</a>
+    </nav>
+    
+    <!-- Main Page Content -->
+    <main>
+
+        <h2>Overview</h2>
+
+        <p>
+          
+        </p>
+
+        <h2>Data Prep</h2>
+
+        <p>
+            Since regression will predict labels of observations within the dataset, labeled numeric data is required. In the context of astrophysical 
+            transient detections, one useful label that is presented in the data is the photometric band of each observation. These bands (g, r, i) 
+            describe the wavelength ranges that each transient detection was observed in. In particular, these correspond to 400-550nm, 550-700nm, 
+            and 700-850nm, respectively. These are measured using transmission curves, which ultimately come from optical inference filters built 
+            into the instrument. All of these wavelength ranges are found in the optical/visible range of the electromagnetic spectrum, with a small 
+            fraction occupying the near-infrared range. The goal of training a decision tree here is to see whether or not the photometric bands of 
+            transient detections can be predicted based on transient rise/decay times. To obtain more sky coverage than before, 10 randomly-selected 
+            partitions will be used to train the NB classifier, rather than the first 10 partitions of data which occupy a narrow region on the sky. 
+            A snapshot of the data is shown below in Figure 1, which includes the transient rise/decay times and the photometric bands (used as 
+            labels). Figure 2 shows the labels associated with this dataset, and Figures 3 and 4 show the datasets split into tranining and testing 
+            data, respectively. This data is a result of the data cleaning that was described in the DataPrep_EDA tab. The full 10 partition dataset 
+            contains 2,634,436 rows. Finally, in order to construct a decision tree, the data need to be split into testing and training datasets. 
+            This was accomplished by allocating 20% of the dataset to testing data, and the other 80% to training data. The split was chosen randomly,
+            but can be reproduced using a random_state identifier. Finally, the split attempts to keep roughly the same proportions of each label in 
+            both datasets.
+        </p>
+
+         <figure class="eda-figure">
+            <img src="images/labeled_transient_data.png" 
+                 alt="Labeled Transient Data">
+            <figcaption>
+                Figure 4: An image of the cleaned transient data that will be used for constructing an regression classifier. This includes 2,634,436 
+                observations of transient rise and decay times from 10 randomly-sampled partitions of the full ZTF dataset.
+            </figcaption>
+        </figure>
+
+        <figure class="eda-figure">
+            <img src="images/ml_labels.png" 
+                 alt="Labels">
+            <figcaption>
+                Figure 5: An image of the labels associated with the cleaned transient data in Figure 1. These labels correspond to the g, r, and i 
+                photometric bands.
+            </figcaption>
+        </figure>
+
+        <figure class="eda-figure">
+            <img src="images/train_transient_data.png" 
+                 alt="Labels">
+            <figcaption>
+                Figure 6: An image of the trained transient dataset, which covers 80% of the original 10 randomly-partitioned dataset. 
+            </figcaption>
+        </figure>
+
+        <figure class="eda-figure">
+            <img src="images/test_transient_data.png" 
+                 alt="Labels">
+            <figcaption>
+                Figure 7: An image of the test transient dataset, which covers 20% of the original 10 randomly-partitioned dataset.
+            </figcaption>
+        </figure>
+
+        <ul class="question-list">
+            <li>Lightcurves ("s3://ipac-irsa-ztf/ztf/enhanced/dr24/lc/hats")</li>
+        </ul>
+
+        <h2>Code</h2>
+
+        <p>
+            The code used for this project can be found under the "Regression" header in the following jupyter notebook, which has been pushed to this
+            github repository.
+        </p>
+
+        <a href="https://github.com/drmi7721/transient_clustering/blob/main/notebooks/final_project_code.ipynb" target="_blank">
+            View Jupyter Notebook
+        </a>
+
+        <h2>Results</h2>
+
+        <h2>Conclusions</h2>
+
+        <p>
+
+        </p>
