@@ -33,8 +33,20 @@
         <h2>Overview</h2>
 
         <p>
-          
+          Regression predicts the labels for a set of data by fitting a function to the observations and returning the residuals, or the difference
+          between the observations and predictions. The simplest form of regression is linear regression, where the data is fit with a straight line
+          containing two parameters, the slope and y-intercept. One measurement that can be made from this supervised learning method is the sum of
+          squared residuals, which is the goal of least-squares linear regression. Least squares attempts to minimize this measurement. A similar
+          measurement can be made by finding the difference between the predictions and mean observation, which is the sum of squares total. Combining
+          these two quantities gives the R^2 value, which compares the best-fit line's error to the error of guessing the mean for each prediction. In
+          this case, R^2 = 1 is a perfect fit and R^2 = 0 is equivalent to choosing the mean for every prediction. Figure 1 below shows an example for 
+          how linear regression works. Logistic regression works the same way, but takes the linear score and applies the sigmoid operator to it. The 
+          sigmoid operator is a smooth function that guarantees that the values will fall between 0 and 1, which makes it convenient for interpreting 
+          them as probabilities. Inverting the sigmoid gives the linear piece back, so that logistic regression is linear in the log-odds. Figure 2 below
+          shows an example of the sigmoid function from desmos graphing calculator. 
         </p>
+
+        
 
         <h2>Data Prep</h2>
 
