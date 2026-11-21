@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Decision Trees</title>
+    <title>AdaBoost</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -33,8 +33,23 @@
         <h2>Overview</h2>
 
         <p>
-          
+          Adaptive Boosting, or AdaBoost, works with a set of training data in sequence to improve the weighted error of the predictions. It starts with
+          a set of training data and initial weights, and then applies a weak learner repeatedly until the weighted errors are optimized. The weights for
+          misclassified predictions are increase, while the weights for correctly classified predictions are decreased. Once the new weights are calculated
+          the weak learner is applied to the same data once again. This method is different than bagging in multiple ways. Bagging takes many deep trees and
+          averages the results, while boosting takes a single decision stump and continuously re-weights the predictions. Decision stumps in this case correspond
+          to a decision tree that has only a single split and minimizes the weighted error. The final vote from an AdaBoost classifier predicts a class by 
+          measuring the sign of the weighted vote.
         </p>
+
+        <figure class="eda-figure">
+            <img src="images/regression_dataset.png" 
+                 alt="Labeled Transient Data">
+            <figcaption>
+                Figure 3: An image of the cleaned transient data that will be used for constructing an regression classifier. This includes 2,698,119 
+                observations of transient rise and decay times from 10 randomly-sampled partitions of the full ZTF dataset.
+            </figcaption>
+        </figure>
 
         <h2>Data Prep</h2>
 
