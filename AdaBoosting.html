@@ -39,7 +39,7 @@
           the weak learner is applied to the same data once again. This method is different than bagging in multiple ways. Bagging takes many deep trees and
           averages the results, while boosting takes a single decision stump and continuously re-weights the predictions. Decision stumps in this case correspond
           to a decision tree that has only a single split and minimizes the weighted error. The final vote from an AdaBoost classifier predicts a class by 
-          measuring the sign of the weighted vote.
+          measuring the sign of the weighted vote. AdaBoost attempts to minimize the exponential loss through this algorithm.
         </p>
 
         <figure class="eda-figure">
@@ -62,7 +62,7 @@
         <h2>Data Prep</h2>
 
         <p>
-            Since AdaBoost will predict labels of observations within the dataset, labeled numeric data is required. In the context of astrophysical 
+            Since AdaBoost will predict numeric labels of observations within the dataset, numeric data is required. In the context of astrophysical 
             transient detections, one useful label that is presented in the data is the photometric band of each observation. These bands (g, r, i) 
             describe the wavelength ranges that each transient detection was observed in. In particular, these correspond to 400-550nm, 550-700nm, 
             and 700-850nm, respectively. These are measured using transmission curves, which ultimately come from optical inference filters built 
@@ -93,7 +93,7 @@
                  alt="Labels">
             <figcaption>
                 Figure 4: An image of the labels associated with the cleaned transient data in Figure 3. These labels correspond to the g, i, and r 
-                photometric bands, but were encoded to numeric values 0, 1, and 2 respectively.
+                photometric bands, but were encoded to numeric values 0, 1, and 2 respectively using scikit-learn's LabelEncoder() function.
             </figcaption>
         </figure>
 
@@ -129,6 +129,14 @@
         </a>
 
         <h2>Results</h2>
+
+        <figure class="eda-figure">
+            <img src="images/regression_test_data.png" 
+                 alt="Labels">
+            <figcaption>
+                Figure 6: An image of the test transient dataset, which covers 20% of the original 10 randomly-partitioned dataset.
+            </figcaption>
+        </figure>
 
         <h2>Conclusions</h2>
 
