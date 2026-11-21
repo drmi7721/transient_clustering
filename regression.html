@@ -97,7 +97,7 @@
             <img src="images/encoded_labels.png" 
                  alt="Labels">
             <figcaption>
-                Figure 4: An image of the labels associated with the cleaned transient data in Figure 3. These labels correspond to the g, r, and i 
+                Figure 4: An image of the labels associated with the cleaned transient data in Figure 3. These labels correspond to the g, i, and r 
                 photometric bands, but were encoded to numeric values 0, 1, and 2 respectively.
             </figcaption>
         </figure>
@@ -139,20 +139,40 @@
             <img src="images/regression_results.png" 
                  alt="Linear results">
             <figcaption>
-                Figure 7:
+                Figure 7: A plot showing the predicted numeric labels from the training data vs. the actual numeric labels from the test data. The 
+                dashed red line shows the line that would satisfy a perfect prediction each time. 
             </figcaption>
         </figure>
+
+        Figure 7 above shows a plot comparing the predicted numeric labels from a linear regression model applied to the training data vs. the actual 
+        numeric labels from the test data. From this, it is clear that the linear regression model could not accurately capture the true labels. In this
+        case, the model almost always predicted the i-band. This is not an accurate representation of the data, since the i-band actually has the least
+        number of observations in the original data. The two coefficients for this linear regression fit are the slope and y-intercept, corresponding to
+        how steep the dashed-red line is and where the dashed-red line intercepts the vertical axis. Since there are only three discrete labels for 
+        this set of data, linear regression is not an optimal choice for prediction since it assumes a continuous fit. The R^2 value for this model
+        was 0.00017 and the root-mean-squared error was 0.89, both confirming that this model performed poorly with this set of data.
 
         <figure class="eda-figure">
             <img src="images/log_cm.png" 
                  alt="Log results">
             <figcaption>
-                Figure 8:
+                Figure 8: A confusion matrix showing the resulting predictions from the logistic regression model. 
             </figcaption>
         </figure>
+
+        <p>
+            Figure 8 above shows a confusion matrix for the logistic regression model predictions. In this case, the logistic regression model only
+            predicts the r-band, which has the largest number of observations in the original data. Therefore, this is also a weak model for predicting
+            photometric bands from transient rise and decay times. The predicted coefficient in this case corresponds to the log-odds, meaning that
+            taking the exponential of the odds will return the value to the linear score. Comparing this to the Naive Bayes classifier shows that the
+            Naive Bayes classifier did a significantly better job, which is due to the fact that logistic regression assumes a continuous fit to the
+            discrete data at hand.
+        </p>
 
         <h2>Conclusions</h2>
 
         <p>
-
+            Using the figures above, it is clear that both linear and logistic regression cannot accurately predict photometric band from transient
+            rise and decay times. This is most likely due to the fact these models fit a continuous function to discrete data that has only three
+            possible labels. These models would perform better for data that has a wider variety of possible labels to choose from.
         </p>
