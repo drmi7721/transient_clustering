@@ -138,6 +138,23 @@
             </figcaption>
         </figure>
 
+        One change that was made to the transient dataset immediately before fitting to an AdaBoost classifier was a balanced sample weight, which
+        accounts for the fact that the dataset used here contains a majority of r-band observations and much fewer g-band and i-band observations. 
+        This may have contributed to the inaccurate predictions from the linear regression and logistic regression models. Figure 7 shows the confusion
+        matrix from the AdaBoost classifier. After applying weights to the dataset, the AdaBoost classifier predicts each of the observations many times,
+        many of which are still false negatives and false positives. It is clear that the g-band and i-band predictions are weighted more heavily due to the
+        smaller number of actual observations for these labels. The accuracy reported for this classifier was 0.31. Although the number of false predictions is 
+        high and the accuracy is low for this classifier, it still did a much better job at predicting all labels consistently, compared to the regression 
+        models. 
+
+        <figure class="eda-figure">
+            <img src="images/adaboost_estimators.png" 
+                 alt="Accuracy vs. Estimators">
+            <figcaption>
+                Figure 8: A plot showing the accuracy score of the AdaBoost classifier for varying numbers of estimators.
+            </figcaption>
+        </figure>
+
         <h2>Conclusions</h2>
 
         <p>
